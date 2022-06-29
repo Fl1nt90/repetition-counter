@@ -194,3 +194,8 @@ button:active { /* pressing button animation, combined with box-shadow */
 }
 
 
+@media screen and (max-height: 350px) { 
+  .main-container{
+    font-size: 0.9rem;
+  }
+}
