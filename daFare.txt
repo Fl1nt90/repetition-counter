@@ -1,0 +1,12 @@
+
+
+
+FATTO
+-sistemare il problema con play() audio, promise etc
+-recovery time visual effects
+-disable start button when exercise is over (to point out user has to press RESET)
+-aggiungere LOOP su audio lunghi
+-responsive layout
+---anche per quando si apre il tastierino numerino
+-clear all input forms at runtime to avoid bugs
+-prevent spegnimento schermo con noSleep.js

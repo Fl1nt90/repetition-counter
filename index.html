@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Repetition Counter</title>
+    <link rel="icon" href="assets/img/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css" />
+  </head> 
+  <body>
+    <div class="main-container">
+      
+<!-- INPUT -->
+      <div class="containers input-container">
+            <label class="form__label" title="How many repetition?">Repetition Amount</label>
+            <label class="form__label" title="How long each repetition is">Duration</label>
+            <label class="form__label" title="If present, timer will automatically re-start after recovery time">Recovery Time</label>
+            <input type="tel" class="form-input form-input--repetition"> <!-- tastierino numerico/number keypad-->
+            <input type="tel" class="form-input form-input--time" placeholder="(sec)">
+            <input type="tel" class="form-input form-input--recovery" placeholder="(sec)">
+      </div>
+<!-- INFO -->
+      <div class="containers info-container">
+            <label class="form__label">Repetition Left</label>
+            <label class="form__label">Duration</label>
+            <span id="repetition-left"> 0 </span>
+            <span id="timer"> 0 </span>
+      </div>
+<!-- BUTTONS -->
+      <div class="containers btn-container">
+          <button tabindex="-1" class="btns" id="btn-reset">RESET</button> <!--deactivate tab button selection -->
+          <div class="volume-icon">
+            <i class="fa-solid fa-volume-xmark"></i>
+          </div>
+          <button tabindex="-1" class="btns" id="btn-start">START</button>
+      </div>
+    </div>
+    
+<!-- audio player -->
+    <div class="audio-container">
+      <audio hidden></audio>
+    </div>
+    <!-- Script -->
+    <script src="./nosleep.js/dist/NoSleep.js"></script> <!-- BEFORE script.js -->
+    <script src="script.js" type="module"></script>
+
+  </body>
+</html>
