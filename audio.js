@@ -4,9 +4,6 @@ const audioPlayer = document.querySelector('audio')
 const volumeIcon = document.querySelector('.fa-solid');
 let isMuted;
 
-//noSleep.js module
-let noSleep = new NoSleep(); //NO NEED TO IMPORT IF I DID IN THE index.html
-
 
 //volume icon toggle function
 function toggleVolumeIcon () {
@@ -23,7 +20,6 @@ if (!isMuted) toggleVolumeIcon();
 audioPlayer.muted = isMuted;
 
 export function playAudio(audioTipe1, audioTipe2) {
-    noSleep.enable(); //enable noSleep.js
     audioPlayer.loop = false; //by default
 
     audioPlayer.src = `assets/audio/${audioTipe1}.m4a`

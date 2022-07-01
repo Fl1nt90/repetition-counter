@@ -24,6 +24,8 @@ let isRecovering = false;
 let timerIsActiveID; //necessary to cancel the timer
 let recoveryIsActiveID; //necessary for the recovery timer
 
+//noSleep.js module
+let noSleep = new NoSleep(); //NO NEED TO IMPORT IF I DID IN THE index.html
 
 //clear all input fields at runtime, to avoid bugs (with firefox for example)
 document.querySelectorAll('.form-input').forEach(el => el.value = '');
@@ -67,6 +69,7 @@ const startTimerHelper = function() { //function to check input data and control
 
 const startTimer = function () {
     audioScript.playAudio('whistle', 'tiktok')
+    noSleep.enable(); //enable noSleep.js
     btnStart.textContent = 'Pause';
     time = time + 1; //necessary to make it work
     timerFunc(); //call it once immediately to reduce delay
@@ -128,9 +131,12 @@ const timerFunc = function() {
             isRecovering = true;
         };
         
-        //disable start button
-        if (totalRep === 0) btnStart.disabled = true;
-    }
+        //when the WHOLE EXERCISE IS OVER
+        if (totalRep === 0) { 
+            btnStart.disabled = true; //disable start button
+            noSleep.disable(); //disable noSleep.js
+        };
+    };
 };
 
 
